@@ -16,7 +16,7 @@ async function startCounter() {
     isCounting = true;
     while (isCounting && count < 100) {
         let ans= await counter();
-        if (!isCounting) break;
+        if (!isCounting || count>100) break;
         document.getElementById('counterDisplay').textContent = ans;
         console.log("count = ",ans);
     }
